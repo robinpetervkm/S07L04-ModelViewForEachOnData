@@ -7,6 +7,9 @@
 <title>Name View</title>
 </head>
 <body>
-Hello, ${name}
+Date : <b>${date} </b><br/>
+Hello, <b>${name} </b > <br/>
+
+${names}<br/>
 </body>
 </html>

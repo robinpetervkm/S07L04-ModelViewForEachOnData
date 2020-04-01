@@ -1,5 +1,9 @@
 package com.norha;
 
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
+
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.stereotype.Controller;
@@ -18,14 +22,35 @@ public class MainController {
 		return "hello";
 	}
 
-
+	
+	
 	@GetMapping("displayname")
 	public ModelAndView displayName(@RequestParam("firstName") String firstName) {
 		ModelAndView modelAndView = new ModelAndView("displayName");
+		Date date= new Date();
+		List<String> names = new ArrayList<>();
+		names.add("Robin");
+		names.add("Rinu");
+		names.add("Peter");
+		names.add("Tinu");
+		names.add("Tintu");
+		names.add("Jobin");
+		modelAndView.addObject("names", names);
+		modelAndView.addObject("date", date);
 		modelAndView.addObject("name", firstName);
 		return modelAndView;
 	}
+	
+	/*
+	 * Following is make Use of modelAndView
+	 */
 
+	/*
+	 * @GetMapping("displayname") public ModelAndView
+	 * displayName(@RequestParam("firstName") String firstName) { ModelAndView
+	 * modelAndView = new ModelAndView("displayName");
+	 * modelAndView.addObject("name", firstName); return modelAndView; }
+	 */
 	/*
 	 * Following is make Use of @RequestParam("firstName") String firstName,Model
 	 * model

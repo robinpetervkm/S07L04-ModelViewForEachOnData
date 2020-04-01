@@ -11,6 +11,10 @@
 Date : <b>${date} </b><br/>
 Hello, <b>${name} </b > <br/>
 
-${names}<br/>
+
+<c:forEach items="${names}" var="temp">
+    <p>${temp}</p><br/>
+</c:forEach>
+
 </body>
 </html>
